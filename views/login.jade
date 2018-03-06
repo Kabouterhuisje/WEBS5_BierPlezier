@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  script(src='js/login.js')
+  .container
+    a(href='/').logo: img(src='img/logo.png')
+    .card.card-login.card-container
+      img#profile-img.profile-img-card(src='img/beercircle.png')
+      p#profile-name.profile-name-card
+      form.form-signin#frmLogin
+        span#reauth-email.reauth-email
+        input#email.form-control(type='username', placeholder='Email', required='', autofocus='')
+        input#password.form-control(type='password', placeholder='Wachtwoord', required='')
+        button.btn.btn-lg.btn-primary.btn-block.btn-signin(type='submit') Inloggen
+      a.forgot-password(href='/register')
+        | Heb je nog geen account? Klik hier!

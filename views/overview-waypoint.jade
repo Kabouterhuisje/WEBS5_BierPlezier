@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  script(src='/js/waypoint.js')
+  .container
+      a(href='/').logo: img(src='/img/logo.png')
+      .container
+        #waypoint
+
+        #users.col-xs-6
+          h2 Users
+          if(!checkedIn)
+            p
+              a#btn_checkin
+                button.btn.btn-success Inchecken

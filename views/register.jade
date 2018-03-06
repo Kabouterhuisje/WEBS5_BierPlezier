@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  script(src='js/register.js')
+  .container
+    a(href='/').logo: img(src='img/logo.png')
+    .row
+      .col-xs-12.col-sm-8.col-md-6.col-sm-offset-2.col-md-offset-3
+        form(role='form')#frmRegister
+          h2.center
+            | Meld je aan! NU! 
+          hr.colorgraph
+          .card.card-register.card-container
+            p#profile-name.profile-name-card
+            form.form-signin
+                .row
+                  .col-xs-12.col-md-4
+                    .form-group
+                      input#first_name.form-control.input(type='text', name='first_name', placeholder='Voornaam', tabindex='1', required='')
+                  .col-xs-12.col-md-4
+                    .form-group
+                      input#middle_name.form-control.input(type='text', name='middle_name', placeholder='Tussenvoegsel', tabindex='2')
+                  .col-xs-12.col-md-4
+                    .form-group
+                      input#last_name.form-control.input(type='text', name='last_name', placeholder='Achternaam', tabindex='3', required='')
+                  .col-xs-12
+                    .form-group
+                      input#age.form-control.input(type='number', name='age', placeholder='Leeftijd', tabindex='4', required='')
+                  .col-xs-12
+                    .form-group
+                      input#email.form-control.input(type='email', name='username', placeholder='E-Mail address', tabindex='5', required='')
+                  .col-xs-12.col-md-6
+                    .form-group
+                      input#password.form-control.input(type='password', name='password', placeholder='Wachtwoord', tabindex='6', required='')
+                  .col-xs-12.col-md-6
+                    .form-group
+                      input#password_confirmation.form-control.input(type='password', name='password_confirmation', placeholder='Confirm Password', tabindex='6', required='')
+              button.btn.btn-lg.btn-primary.btn-block.btn-signin#btnRegister(type='submit') Registreren
+            a.forgot-password(href='/login')
+              | Heb je al een account? Klik hier!

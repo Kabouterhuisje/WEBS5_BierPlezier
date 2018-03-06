@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  script(type='text/javascript').
+    var user = !{JSON.stringify(user)}
+  script(src='/js/race.js')
+  .container
+      a(href='/').logo: img(src='/img/logo.png')
+      .container
+        #race
+
+        #waypoints.col-xs-6
+          h2 Waypoints
+          if(user.admin)
+            p
+              a(href='/races/' + raceid + '/waypoints/create')
+                button.btn.btn-primary Waypoint toevoegen
+        #users.col-xs-6
+          h2 Users
+          if(!inRace)
+            p
+              a#btn_participate
+                button.btn.btn-success Deelnemen

@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title BierPlezier
+    script(src='/socket.io/socket.io.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+    script(src='https://code.jquery.com/ui/1.11.4/jquery-ui.js')
+    script(src='/js/moment.js')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='https://code.jquery.com/ui/1.11.4/themes/ui-lightness/jquery-ui.css')
+    link(rel='stylesheet', href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/css/style.css')
+
+  body
+    
+    .alerts  
+      if error && error.length > 0
+        .alert.alert-danger.alert-dismissible.fade-in(role="alert")
+          button.close(type="button" data-dismiss="alert" aria-label="Close")
+            span(aria-hidden="true") ×
+          p= error
+      if success && success.length > 0
+        .alert.alert-success.alert-dismissible.fade-in(role="alert")
+          button.close(type="button" data-dismiss="alert" aria-label="Close")
+            span(aria-hidden="true") ×
+          p= success
+
+    if (user)
+      p Welkom: #{user.full_name}
+      a(href="/users/logout") Uitloggen
+
+    block content

@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  script(src='https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places')
+  script(src='/js/create-waypoint.js')
+  .container
+      a(href='/').logo: img(src='/img/logo.png')
+      .row
+        .col-md-6.col-md-offset-3
+          form.form-horizontal#frmCreateWaypoint(role='form')
+            fieldset
+              // Form Name
+              legend Waypoint toevoegen
+              // Text input
+              .form-group
+                label.col-sm-3.control-label(for='textinput') Naam
+                .col-sm-9
+                  input#waypoint_name.form-control(type='text', placeholder='Naam', required='', autofocus='')
+              // Text input
+              .form-group
+                label.col-sm-3.control-label(for='textinput') Zoek naar kroeg
+                .col-sm-9
+                  input#waypoint_nearby.form-control(type='text', placeholder='Zoek naar kroeg')
+              // Text input
+              .form-group
+                label.col-sm-3.control-label(for='textinput') Breedtegraad
+                .col-sm-9
+                  input#waypoint_lat.form-control(type='text', placeholder='Breedtegraad', required='', disabled)
+              // Text input
+              .form-group
+                label.col-sm-3.control-label(for='textinput') Lengtegraad
+                .col-sm-9
+                  input#waypoint_lng.form-control(type='text', placeholder='Lengtegraad', required='', disabled)
+              .form-group
+                .col-sm-offset-3.col-sm-9
+                  .pull-right
+                    button.btn.btn-default#btnCancel Cancel
+                    button.btn.btn-success#btnSave(type='submit') Opslaan
