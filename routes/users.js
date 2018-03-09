@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var app = express();
 
 module.exports = function(passport, mongoose){
 
@@ -8,20 +7,23 @@ module.exports = function(passport, mongoose){
 		res.send(req.user);
   	});
 
-    app.get('/auth/facebook', passport.authenticate('facebook', {
-        scope : ['public_profile', 'email']
-    }));
-
-    // handle the callback after facebook has authenticated the user
-    app.get('/auth/facebook/callback',
-        passport.authenticate('facebook', {
-            successRedirect : '/',
-            failureRedirect : '/'
-        }));
-
 	router.post('/signup', passport.authenticate('local-signup'), function(req, res) {
 		res.send(req.user);
   	});
+
+    // =====================================
+    // FACEBOOK ROUTES =====================
+    // =====================================
+    // route for facebook authentication and login
+    router.get('/facebook', passport.authenticate('facebook', {
+        scope : 'email'
+    }));
+
+    // handle the callback after facebook has authenticated the user
+    router.get('/facebook/callback', passport.authenticate('facebook', {
+        successRedirect : '/',
+        failureRedirect : '/'
+    }));
 
 	router.get('/logout', function(req, res) {
 	  req.logout();
