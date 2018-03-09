@@ -185,3 +185,8 @@ a.logo {
 .ui-state-default {
 	border: none !important;
 }
+
+.btnFacebook, .btnGoogle {
+    height: 25px;
+    width: 25px;
+}
