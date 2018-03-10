@@ -2,7 +2,7 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var configAuth = require('./auth');
-var User;
+var User = require('../models/user');
 
 
 var init = function(User) {
