@@ -44,8 +44,8 @@ app.use(require('express-session')({
     secret: 's3cr37',
     resave: true,
     saveUninitialized: false,
-    cookie: { 
-      expires: new Date(Date.now() + 60 * 10000), 
+    cookie: {
+      expires: new Date(Date.now() + 60 * 10000),
       maxAge: 60*10000
     }
 }));
