@@ -11,7 +11,13 @@ init = function(mongoose){
 		last_name: { type: String, required: true },
 		middle_name: { type: String, required:false },
 		age: { type: Number, required: true },
-		admin: {type: Boolean, required: true}
+		admin: {type: Boolean, required: true},
+		facebook: {
+			id: String,
+			token: String,
+			email: String,
+			name: String
+		}
     }, {
 		toObject: { virtuals: true },
 		toJSON: { virtuals: true }

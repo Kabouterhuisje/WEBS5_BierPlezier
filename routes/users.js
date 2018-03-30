@@ -11,20 +11,11 @@ module.exports = function(passport, mongoose){
 		res.send(req.user);
   	});
 
-    // =====================================
-    // FACEBOOK ROUTES =====================
-    // =====================================
-    // route for facebook authentication and login
-    router.get('/auth/facebook', passport.authenticate('facebook', {
-        scope : ['public_profile', 'email']
-    }));
+    app.get('/auth/facebook', passport.authenticate('facebook'));
 
-    // handle the callback after facebook has authenticated the user
-    router.get('/auth/facebook/callback',
-        passport.authenticate('facebook', {
-            successRedirect : '/',
-            failureRedirect : '/'
-        }));
+    app.get('/auth/facebook/callback',
+        passport.authenticate('facebook', { successRedirect: '/',
+            failureRedirect: '/login' }));
 
 	router.get('/logout', function(req, res) {
 	  req.logout();
