@@ -11,9 +11,9 @@ module.exports = function(passport, mongoose){
 		res.send(req.user);
   	});
 
-    express.get('/auth/facebook', passport.authenticate('facebook'));
+    router.get('/auth/facebook', passport.authenticate('facebook'));
 
-    express.get('/auth/facebook/callback',
+    router.get('/auth/facebook/callback',
         passport.authenticate('facebook', { successRedirect: '/',
             failureRedirect: '/login' }));
 
