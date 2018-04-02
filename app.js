@@ -29,7 +29,7 @@ var userSchema = mongoose.model("User");
 var passport = require('./config/passport')(userSchema);
 
 var races = require('./routes/races')(mongoose);
-var users = require('./routes/users')(passport, mongoose);
+var users = require('./routes/users')(app, passport);
 var routes = require('./routes/index');
 
 app.use(express.static(__dirname + '/public'));

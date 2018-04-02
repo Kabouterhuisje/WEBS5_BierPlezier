@@ -1,0 +1,818 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for WEBS5_BierPlezier\routes\races.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">WEBS5_BierPlezier/routes/</a> races.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">68.57% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>96/140</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">45.16% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>28/62</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">84.44% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>38/45</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">81.03% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>94/116</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var express = require('express');
+var router = express.Router();
+&nbsp;
+&nbsp;
+module.exports = function(mongoose){
+&nbsp;
+	var Race =  mongoose.model('Race');
+	var User =  mongoose.model('User');
+	var Waypoint =  mongoose.model('Waypoint');
+	var isAuthenticated = function (req, res, next) {
+	  <span class="missing-if-branch" title="else path not taken" >E</span>if (req.isAuthenticated())
+	    return next();
+<span class="cstat-no" title="statement not covered" >	  res.redirect('/login');</span>
+	}
+&nbsp;
+	var isAdmin = function (req, res, next) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (req.isAuthenticated() &amp;&amp; req.user.admin)
+        return next();
+<span class="cstat-no" title="statement not covered" >      res.redirect('/');</span>
+    }
+&nbsp;
+    router.route('/')
+	.get(function(req, res) { 
+&nbsp;
+		Race.find({}, function(err, races) {
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+			
+			res.json(races);
+		});
+	})
+	.post(function(req, res, next) {
+		var race = new Race(req.body);
+		race.save(function (err) {
+		  	<span class="missing-if-branch" title="else path not taken" >E</span>if (err) { console.log(err); }
+&nbsp;
+		  	res.json(race);
+		});
+    })
+    .delete(isAdmin, function(req, res) { 
+	  Race.findByIdAndRemove(req.body._id, function(err) {
+	    	<span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+	    	res.send("ok");
+	  	}); 
+	});
+&nbsp;
+	router.get('/create', isAdmin, function(req, res){ 
+	  var passedMessage = req.message;
+	  res.render('create', { title: 'Create Race', user: req.user });
+	});
+&nbsp;
+	router.route('/:raceid')
+	.get(function(req, res) { 
+		Race.findById(req.params.raceid, function(err, race) {
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+			res.json(race);
+      	});
+	})
+	.put(isAdmin, function(req, res) { 
+		Race
+		.findOne({ _id: req.params.raceid })
+		.exec(function(err, race) {
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+            for (var item in req.body) {
+            	race[item] = req.body[item];
+            }
+&nbsp;
+            race.save(function(err) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+                res.send('updated');
+            });
+		});
+	});
+&nbsp;
+&nbsp;
+    router.get('/:raceid/details', isAuthenticated, function(req, res){ 
+		Race
+		.findOne({ _id: req.params.raceid })
+		.exec(function (err, race) {
+		  	<span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+			Race.find({
+			    "_id": req.params.raceid,
+			    "users": req.user._id
+			})
+		    .exec(function (err, race) {
+		        <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+		        <span class="missing-if-branch" title="else path not taken" >E</span>if(Object.keys(race).length === 0)
+					res.render('overview-race', { user: req.user, raceid: req.params.raceid, inRace: false });
+				else
+<span class="cstat-no" title="statement not covered" >					res.render('overview-race', { user: req.user, raceid: req.params.raceid, inRace: true });</span>
+			});
+		});
+	});
+&nbsp;
+	router.route('/:raceid/waypoints')
+	.get(function(req, res){
+		Race
+		.findOne({ _id: req.params.raceid })
+		.populate('waypoints')
+		.exec(function (err, race) {
+		  <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+		  res.json(race.waypoints);
+		});
+	})
+	.post(function(req, res, next){ 
+		var waypoint = new Waypoint(req.body);
+		waypoint.save(function (err) {
+		  	<span class="missing-if-branch" title="else path not taken" >E</span>if (err) { console.log(err); }
+&nbsp;
+		  	Race.findById(req.params.raceid, function(err, race) {
+			    <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+				race.waypoints.push(waypoint._id);
+				race.save(function(err) {
+				    <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+				    
+				    res.send(waypoint);
+	    		});
+			});
+		});
+	})
+	.delete(function(req, res) { 
+		Race.findOne({
+		    "_id": req.params.raceid,
+		    "waypoints": req.body._id
+		})
+		.populate('waypoints')
+		.exec(function(err, race){
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+			for (var i=0; i&lt;race.waypoints.length; i++) {
+				<span class="missing-if-branch" title="else path not taken" >E</span>if(req.body._id == race.waypoints[i]._id) {
+		            race.waypoints.splice(i, 1);
+		            break;
+		        }
+			}
+			race.save(function(err) {
+			    <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+			    res.json(race);
+	    	});
+		});
+	});
+&nbsp;
+	router.get('/:raceid/waypoints/create', isAdmin, function(req, res){ 
+	  	res.render('create-waypoint', { title: 'Create Waypoint', user: req.user });
+	});
+&nbsp;
+	router.get('/:raceid/waypoints/:waypointid/details', isAuthenticated, function(req, res){ 
+		Waypoint.find({
+		    "_id": req.params.waypointid,
+		    "users": req.user._id
+		})
+	    .exec(function (err, waypoint) {
+	        <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+	        <span class="missing-if-branch" title="else path not taken" >E</span>if(Object.keys(waypoint).length === 0)
+	  			res.render('overview-waypoint', { user: req.user, checkedIn: false });
+	  		else
+<span class="cstat-no" title="statement not covered" >				res.render('overview-waypoint', { user: req.user, checkedIn: true });</span>
+	   	});
+	});
+	router.route('/:raceid/waypoints/:waypointid/users')
+	.get(<span class="fstat-no" title="function not covered" >function(req, res){</span>
+<span class="cstat-no" title="statement not covered" >      	Waypoint</span>
+		.findOne({ _id: req.params.waypointid })
+		.populate('users')
+		.exec(<span class="fstat-no" title="function not covered" >function (err, waypoint) {</span>
+<span class="cstat-no" title="statement not covered" >		  if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >		  res.json(waypoint.users);</span>
+		});
+	})
+	.post(<span class="fstat-no" title="function not covered" >function(req, res){</span>
+<span class="cstat-no" title="statement not covered" >		var raceid = req.params.raceid;</span>
+<span class="cstat-no" title="statement not covered" >		var waypointid = req.params.waypointid;</span>
+<span class="cstat-no" title="statement not covered" >		Waypoint.findById(waypointid, <span class="fstat-no" title="function not covered" >function(err, waypoint) {</span></span>
+<span class="cstat-no" title="statement not covered" >		    if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			waypoint.users.push(req.user._id);</span>
+<span class="cstat-no" title="statement not covered" >			waypoint.save(<span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >			    if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			    res.send(req.user);</span>
+    		});
+		});
+	});
+&nbsp;
+	router.route('/:raceid/waypoints/:waypointid')
+	.get(isAuthenticated, <span class="fstat-no" title="function not covered" >function(req, res){</span>
+<span class="cstat-no" title="statement not covered" >			var raceid = req.params.raceid;</span>
+<span class="cstat-no" title="statement not covered" >			var waypointid = req.params.waypointid;</span>
+<span class="cstat-no" title="statement not covered" >			Waypoint.findById(waypointid, <span class="fstat-no" title="function not covered" >function(err, waypoint) {</span></span>
+<span class="cstat-no" title="statement not covered" >				if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >				res.send(waypoint);</span>
+      	});
+	});
+&nbsp;
+	router.route('/:raceid/users')
+	.get(function(req, res){ 
+      	Race
+		.findOne({ _id: req.params.raceid })
+		.populate('users')
+		.exec(function (err, race) {
+		  <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+		  res.json(race.users);
+		});
+	})
+	.post(function(req, res, next){ 
+		Race
+		.findOne({ _id: req.params.raceid })
+		.exec(function (err, race) {
+		    <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+			race.users.push(req.user._id);
+			race.save(function(err) {
+			    <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+			    res.send(req.user);
+    		});
+		});
+	})
+	.delete(function(req, res) { 
+		Race
+		.findOne({ _id: req.params.raceid })
+		.exec(function(err, race){
+			console.log(race);
+			<span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+			for (var i=0; i&lt;race.users.length; i++) {
+				<span class="missing-if-branch" title="if path not taken" >I</span>if(req.body._id == race.users[i]._id) {
+<span class="cstat-no" title="statement not covered" >		            race.users.splice(i, 1);</span>
+<span class="cstat-no" title="statement not covered" >		            break;</span>
+		        }
+			}
+			race.save(function(err) {
+			    <span class="missing-if-branch" title="if path not taken" >I</span>if (err) { <span class="cstat-no" title="statement not covered" >console.log(err); </span>}
+&nbsp;
+			    res.json(race);
+	    	});
+		});
+	});
+	return router;
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Apr 02 2018 15:00:29 GMT+0200 (W. Europe Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

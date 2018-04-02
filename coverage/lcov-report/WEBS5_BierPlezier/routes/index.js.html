@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for WEBS5_BierPlezier\routes\index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">WEBS5_BierPlezier/routes/</a> index.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>40/48</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">78.95% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>15/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">70% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>7/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">83.33% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>40/48</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">var express = require('express');
+var router = express.Router();
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var http = require('http');
+var fs = require('fs');
+&nbsp;
+var isAuthenticated = function (req, res, next) {
+  if (req.isAuthenticated())
+    return next();
+  res.redirect('/login');
+}
+&nbsp;
+var isAdmin = <span class="fstat-no" title="function not covered" >function (req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >  if (req.isAuthenticated() &amp;&amp; req.user.admin)</span>
+<span class="cstat-no" title="statement not covered" >    return next();</span>
+  else {
+<span class="cstat-no" title="statement not covered" >  	req.session.notice = "Je hebt geen rechten om deze actie uit te voeren!";</span>
+<span class="cstat-no" title="statement not covered" >  	res.redirect('/');</span>
+  }
+}
+&nbsp;
+var isNotAuthenticated = function (req, res, next) {
+  if (!req.isAuthenticated()) {
+    return next();
+  }
+  req.session.success = "De race is succesvol aangemaakt!";
+  res.redirect('/');
+}
+&nbsp;
+router.get('/', isAuthenticated, function(req, res){
+  res.render('index', { user: req.user });
+});
+&nbsp;
+router.post('/message', function(req, res, next){
+  if(req.body.success) {
+    req.session.success = req.body.success;
+    res.send("success");
+  }
+  if(req.body.error) {
+    req.session.error = req.body.error;
+    res.send("error");
+  }
+  if(req.body.notice) {
+    req.session.notice = req.body.notice;
+    res.send("notice");
+  }
+  if(!req.body.success &amp;&amp; !req.body.error &amp;&amp; !req.body.notice)
+    res.send("");
+});
+&nbsp;
+router.get('/img/:img', function(req, res, next) {
+	var file = req.params.img;
+  res.sendFile(file, { root: './img/' });
+});
+router.get('/js/:js', <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >	var file = req.params.js;</span>
+<span class="cstat-no" title="statement not covered" >  res.sendFile(file, { root: './img/' });</span>
+});
+&nbsp;
+router.get('/css/:css', <span class="fstat-no" title="function not covered" >function(req, res, next) {</span>
+<span class="cstat-no" title="statement not covered" >	var file = req.params.css;</span>
+<span class="cstat-no" title="statement not covered" >  res.sendFile(file, { root: './css/' });</span>
+});
+&nbsp;
+router.get('/login', isNotAuthenticated, function(req, res) {
+	res.render('login', { title: 'Express' });
+});
+&nbsp;
+router.get('/register', isNotAuthenticated, function(req, res) {
+	res.render('register', { title: 'Express' });
+});
+&nbsp;
+module.exports = router;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Apr 02 2018 15:00:29 GMT+0200 (W. Europe Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

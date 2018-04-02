@@ -10,7 +10,7 @@ var init = function(User) {
     var localStrategyOptions = {
         usernameField : 'email',
         passwordField : 'password',
-        passReqToCallback : true 
+        passReqToCallback : true
     };
 
     passport.use('local-login', new LocalStrategy(localStrategyOptions, function(req, username, password, done) {
@@ -19,7 +19,7 @@ var init = function(User) {
         User.findOne({ 'local.email' :  username }, function(err, user) {
             // checken voor errors
             if (err)
-                return done(err);        
+                return done(err);
             if (!user || !user.validPassword(password))
                 return done(null, false, null);
             // return user
@@ -49,15 +49,15 @@ var init = function(User) {
                 newUser.local.password = newUser.generateHash(password);
                 newUser.save(function(err) {
                   if (err){
-                    console.log('Gebruiker opslaan niet gelukt: ' + err);  
-                    return next(err); 
+                    console.log('Gebruiker opslaan niet gelukt: ' + err);
+                    return next(err);
                   }
-                  console.log('Gebruiker opslaan gelukt');    
+                  console.log('Gebruiker opslaan gelukt');
                   return done(null, newUser);
                 });
             }
           });
-        };  
+        };
         process.nextTick(findOrCreateUser);
       }));
 
@@ -74,7 +74,7 @@ var init = function(User) {
     // =========================================================================
     // FACEBOOK ================================================================
     // =========================================================================
-    passport.use(new FacebookStrategy({
+    passport.use('facebook', new FacebookStrategy({
 
             // pull app id and secret from our auth.js file
             clientID        : configAuth.facebookAuth.clientID,
