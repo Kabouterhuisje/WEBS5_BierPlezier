@@ -38,8 +38,12 @@ block content
               button.btn.btn-lg.btn-primary.btn-block.btn-signin#btnRegister(type='submit') Registreren
             a.forgot-password(href='/login')
               | Heb je al een account? Klik hier!  |
-            a(href="/auth/facebook")
-              img(src='../img/login_with_facebook.png', class="btnFacebook")
-            a(href='/auth/google')
-              img(src='../img/login_with_google.png', class="btnGoogle")
+            div.form-group
+            a.btn.btn-primary(href='/auth/facebook') Facebook
+            div.form-group
+            a.btn.btn-danger(href='/auth/google') Google
+            div.form-group
+            a.btn.btn-info(href='auth/twitter') Twitter
+            div.form-group
+            a.btn.btn-warning(href='auth/github') Github
 
