@@ -44,7 +44,7 @@ function initialize() {
 
     google.maps.event.addListener(autocomplete, 'place_changed', function() {
 	    var place = autocomplete.getPlace();
-	    $("#waypoint_lat").val(place.geometry.location.k);
-	    $("#waypoint_lng").val(place.geometry.location.D);
+	    $("#waypoint_lat").val(place.geometry.location.lat());
+	    $("#waypoint_lng").val(place.geometry.location.lng());
 	});
 }
